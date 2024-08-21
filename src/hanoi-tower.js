@@ -1,4 +1,5 @@
 const { NotImplementedError } = require('../extensions/index.js');
+const {min} = require("mocha/lib/reporters");
 
 /**
  * Calculate turns number and time (in seconds) required
@@ -14,9 +15,14 @@ const { NotImplementedError } = require('../extensions/index.js');
  * calculateHanoi(9, 4308) => { turns: 511, seconds: 427 }
  *
  */
-function calculateHanoi(/* disksNumber, turnsSpeed */) {
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+function calculateHanoi(disksNumber, turnsSpeed) {
+  const res = {}
+ let minStep = (2 ** disksNumber) - 1;
+  res['turns'] = minStep
+  let seconds = turnsSpeed / 3600
+ let minTurns = Math.floor(minStep / seconds)
+  res['seconds'] = minTurns
+  return res
 }
 
 module.exports = {
