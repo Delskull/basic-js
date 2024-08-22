@@ -35,7 +35,6 @@ function minesweeper(matrix) {
   for (let rows = 0; rows < matrix.length; rows++) {
     for (let cols = 0; cols < matrix[rows].length; cols++) {
       if (matrix[rows][cols]) {
-        // Обновляем соседние клетки
         sosed.forEach(([dx, dy]) => {
           const row1 = rows + dx;
           const col1 = cols + dy;
